@@ -4,10 +4,15 @@
  */
 package tp3_heroic_fantasy_sanchez;
 
-import Armes.Epee;
-import Armes.Baton;
-import Armes.Arme;
+import Personnages.Guerrier;
+import Personnages.Magicien;
+import Personnages.Personnage;
+import arme.epee;
+import arme.baton;
+import arme.arme;
 import java.util.ArrayList;
+import Personnages.*;
+import arme.*;
 
 /**
  *
@@ -18,27 +23,36 @@ public class TP3_Heroic_Fantasy_SANCHEZ {
     /**
      * @param args the command line arguments
      */
-   public static void main(String[] args) {
-        // Création des objets Epee
-        Epee epee1 = new Epee("Excalibur", 7, 5);
-        Epee epee2 = new Epee("Durandal", 4, 7);
+    public static void main(String[] args) {
 
-        // Création des objets Baton
-        Baton baton1 = new Baton("Chêne", 4, 5);
-        Baton baton2 = new Baton("Charme", 5, 6);
+        // Création des armes
+        epee excalibur = new epee("Excalibur", 7, 5);
+        epee durandal = new epee("Durandal", 4, 7);
+        baton chene = new baton("Chêne", 4, 5);
+        baton charme = new baton("Charme", 5, 6);
 
-        // Création de la liste dynamique pour stocker les armes
-        ArrayList<Arme> armes = new ArrayList<>();
+        // Création des personnages
+        Guerrier conan = new Guerrier("Conan", 78, true);
+        Magicien gandalf = new Magicien("Gandalf", 65, false);
 
-        // Ajout des armes à la liste
-        armes.add(epee1);
-        armes.add(epee2);
-        armes.add(baton1);
-        armes.add(baton2);
+        // Ajout d'armes
+        conan.ajouterArme(excalibur);
+        conan.ajouterArme(durandal);
+        gandalf.ajouterArme(chene);
+        gandalf.ajouterArme(charme);
 
-        // Affichage des caractéristiques de chaque arme
-        for (int i = 0; i < armes.size(); i++) {
-            System.out.println(armes.get(i).toString());
-        }
+        // Equipement
+        conan.equiperArme("Excalibur");
+        gandalf.equiperArme("Chêne");
+
+        // Combat
+        System.out.println("\nDébut du combat !");
+        conan.attaquer(gandalf);
+        gandalf.attaquer(conan);
+
+        // Affichage des résultats
+        System.out.println("\nÉtat des personnages :");
+        System.out.println(conan);
+        System.out.println(gandalf);
     }
 }

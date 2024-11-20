@@ -35,21 +35,4 @@ public class Magicien extends Personnage {
     public String toString() {
         return super.toString() + ", estConfirme=" + estConfirme + '}';
     }
-
-    public void ajouterArme(baton chene) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    /**
-     *
-     * @param chêne
-     */
-    @Override
-    public void equiperArme(String chêne) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void attaquer(Guerrier conan) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
